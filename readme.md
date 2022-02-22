@@ -1,16 +1,7 @@
-# Three.js Journey
+# Nissedal tourist page
 
-## Setup
-Download [Node.js](https://nodejs.org/en/download/).
-Run this followed commands:
+## Few words on project
 
-``` bash
-# Install dependencies (only the first time)
-npm install
+this project is a fun idea with using a threejs spheregeometry and adding 360degrees photos I've taken with my drone to use as material on the backside of the sphere.
 
-# Run the local server at localhost:8080
-npm run dev
-
-# Build for production in the dist/ directory
-npm run build
-```
+then I placed the camera at center og the sphere. and change the orbit controls setting so it would lock the view exept turning around.
