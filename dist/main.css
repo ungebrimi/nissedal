@@ -48,6 +48,7 @@ body
     display: flex;
 }
 
+
 /*
 * GLOBAL
 */
@@ -75,12 +76,9 @@ body
 .fa-caret-down
 {
     margin-left: 0.7rem;
-    color: var(--clr-white);
-    width: 1rem;
-    height: 1rem;
 }
 
-#exit
+i
 {
     color: var(--clr-white);
     width: 1rem;
@@ -150,49 +148,4 @@ body
     font-size: 1.1rem;
 }
 
-/*
-* Information about diffrent location on the map
-*/
-/*
-
-.information__point-label
-{
-    position: absolute;
-    width: 13px;
-    height: 13px;
-    border-radius: 50%;
-    background-color: var(--clr-orange);
-    border: 1px solid var(--clr-red);
-    color: var(--clr-white);
-    text-align: center;
-    line-height: 40px;
-    font-weight: 100;
-    font-size: 14px;
-    background-size: cover;
-}
-
-.information__point-text
-{
-    position: absolute;
-    background-color: var(--clr-dark);
-    padding: 2rem;
-    font-family: var(--ff-poppins);
-    color: var(--clr-white);
-}
-
-/* EACH LOCATION POSITION*/
-/*
-#skatepark-label
-{
-    top: 20%;
-    left: 20%;
-}
-
-#skatepark-text
-{
-    display: none;
-    top: 22%;
-    left: 20%;
-}
-
-*/
+/*# sourceMappingURL=main.css.map*/
