@@ -48,6 +48,22 @@ body
     display: flex;
 }
 
+.active
+{
+    display: block;
+}
+
+.hidden
+{
+    display: none;
+}
+
+.on-top
+{
+    position: absolute;
+    z-index: 100;
+}
+
 /*
 * GLOBAL
 */
@@ -153,46 +169,13 @@ body
 /*
 * Information about diffrent location on the map
 */
-/*
 
-.information__point-label
+.information-box
 {
-    position: absolute;
-    width: 13px;
-    height: 13px;
-    border-radius: 50%;
-    background-color: var(--clr-orange);
-    border: 1px solid var(--clr-red);
+    left: 0;
+    bottom: 0;
+    padding: 1.4rem;
     color: var(--clr-white);
-    text-align: center;
-    line-height: 40px;
-    font-weight: 100;
-    font-size: 14px;
-    background-size: cover;
-}
-
-.information__point-text
-{
-    position: absolute;
     background-color: var(--clr-dark);
-    padding: 2rem;
-    font-family: var(--ff-poppins);
-    color: var(--clr-white);
+    max-width: 60ch;
 }
-
-/* EACH LOCATION POSITION*/
-/*
-#skatepark-label
-{
-    top: 20%;
-    left: 20%;
-}
-
-#skatepark-text
-{
-    display: none;
-    top: 22%;
-    left: 20%;
-}
-
-*/

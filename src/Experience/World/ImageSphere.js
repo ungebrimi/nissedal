@@ -37,6 +37,7 @@ export default class imageSphere {
             new THREE.SphereGeometry(3),
             new THREE.MeshBasicMaterial(
                 {
+                    //wireframe: true,
                     map: textures.nissedalTexture,
                     side: BackSide,
                 }

@@ -10,6 +10,7 @@ import World from './World/World.js'
 import Menu from './DOM/Menu.js'
 import Weather from './DOM/Weather.js'
 import Gsap from './DOM/Gsap.js'
+import Raycaster from './Utils/Raycaster.js'
 
 let instance = null
 
@@ -38,6 +39,7 @@ export default class Experience
         this.scene = new THREE.Scene()
         this.camera = new Camera()
         this.renderer = new Renderer()
+        this.raycaster = new Raycaster()
         this.world = new World()
         this.menu = new Menu()
         this.weather = new Weather()

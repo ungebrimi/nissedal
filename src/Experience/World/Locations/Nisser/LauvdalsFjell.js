@@ -9,28 +9,20 @@ export default class LauvdalsFjell
         this.debug = new Debug()
         this.experience = new Experience()
         this.scene = this.experience.scene
-        this.lauvdalsFjellPoint()
+        this.setLauvdalsFjellPoint()
     }
 
-    lauvdalsFjellPoint()
+    setLauvdalsFjellPoint()
     {
-        const point = new THREE.Mesh(
+        this.lauvdalsFjellPoint = new THREE.Mesh(
             new THREE.CircleGeometry(0.02, 17),
             new THREE.MeshBasicMaterial(
                 {
-                    color: "#ffefff",
+                    color: "#e71d36",
                 }
             )
             )
-            this.scene.add(point)
-            point.position.set(-2.89, 0.58, 0.35)
-            point.rotation.set(0, 1.4, 0.37)
-            this.debug.ui.add(point.position, 'x').max(10).min(-10).step(0.01).name("pointX")
-            this.debug.ui.add(point.position, 'y').max(10).min(-10).step(0.01).name("pointY")
-            this.debug.ui.add(point.position, 'z').max(10).min(-10).step(0.01).name("pointZ")
-            this.debug.ui.add(point.rotation, 'x').max(10).min(-10).step(0.01).name("pointRX")
-            this.debug.ui.add(point.rotation, 'y').max(10).min(-10).step(0.01).name("pointRY")
-            this.debug.ui.add(point.rotation, 'z').max(10).min(-10).step(0.01).name("pointRZ")
-
+            this.lauvdalsFjellPoint.position.set(-2.9, 0.6, 0.39)
+            this.lauvdalsFjellPoint.rotation.set(0, 1.4, 0.37)
         }
 }

@@ -9,21 +9,20 @@ export default class Torgrimsfjell
         this.debug = new Debug()
         this.experience = new Experience()
         this.scene = this.experience.scene
-        this.torgrimsfjellPoint()
+        this.setTorgrimsfjellPoint()
     }
 
-    torgrimsfjellPoint()
+    setTorgrimsfjellPoint()
     {
-        const point = new THREE.Mesh(
-            new THREE.CircleGeometry(0.02, 17),
+        this.torgrimsfjellPoint = new THREE.Mesh(
+            new THREE.CircleGeometry(0.1, 17),
             new THREE.MeshBasicMaterial(
                 {
-                    color: "#ffefff",
+                    color: "#e71d36",
                 }
             )
             )
-            this.scene.add(point)
-            point.position.set(-2.71, 0.32, -0.9)
-            point.rotation.set(0, 1.2, 0.37)
+            this.torgrimsfjellPoint.position.set(-2.71, 0.32, -0.9)
+            this.torgrimsfjellPoint.rotation.set(0, 1.2, 0.37)
         }
 }

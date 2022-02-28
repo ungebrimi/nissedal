@@ -9,21 +9,20 @@ export default class Kyrjeneset
         this.debug = new Debug()
         this.experience = new Experience()
         this.scene = this.experience.scene
-        this.kyrjenesetPoint()
+        this.setKyrjenesetPoint()
     }
 
-    kyrjenesetPoint()
+    setKyrjenesetPoint()
     {
-        const point = new THREE.Mesh(
+        this.kyrkjenesetPoint = new THREE.Mesh(
             new THREE.CircleGeometry(0.02, 17),
             new THREE.MeshBasicMaterial(
                 {
-                    color: "#ffefff",
+                    color: "#e71d36",
                 }
             )
             )
-        this.scene.add(point)
-        point.position.set(-0.18, -0.57, -2.92)
-        point.rotation.set(0, 0.17, 0)
+        this.kyrkjenesetPoint.position.set(-0.18, -0.57, -2.92)
+        this.kyrkjenesetPoint.rotation.set(0, 0.17, 0)
     }
 }

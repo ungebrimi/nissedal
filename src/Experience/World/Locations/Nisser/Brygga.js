@@ -9,21 +9,31 @@ export default class Brygga
         this.debug = new Debug()
         this.experience = new Experience()
         this.scene = this.experience.scene
-        this.bryggaPoint()
+        this.setBryggaPoint()
     }
 
-    bryggaPoint()
+    setBryggaPoint()
     {
-        const point = new THREE.Mesh(
+        this.bryggaPoint = new THREE.Mesh(
             new THREE.CircleGeometry(0.02, 17),
             new THREE.MeshBasicMaterial(
                 {
-                    color: "#ffefff",
+                    color: "#e71d36",
                 }
             )
             )
-            this.scene.add(point)
-            point.position.set(-1.76, -1.31, -2.01)
-            point.rotation.set(5.82, 0.41, 0)
+            this.bryggaPoint.position.set(-1.76, -1.32, -2.01)
+            this.bryggaPoint.rotation.set(5.82, 0.41, 0)
+        
+            this.testBox = new THREE.Mesh(
+            new THREE.BoxGeometry(1, 1, 1),
+            new THREE.MeshBasicMaterial(
+                {
+                    color: "#fffeff"
+                }
+            )
+            )
+            this.testBox.position.set(1, 1, 1)
+            this.scene.add(this.testBox)
     }
 }
