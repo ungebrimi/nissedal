@@ -1,6 +1,8 @@
 import Experience from "../../Experience"
 import Nisser from "./Nisser/Nisser"
 import Kirka from './kirka/Kirka'
+import Ferjesundet from "./Ferjesundet/Ferjesundet"
+import Skeimo from './Skeimo/Skeimo'
 
 export default class Locations
 {
@@ -9,8 +11,11 @@ export default class Locations
         this.experience = new Experience()
         this.kirka = new Kirka()
         this.nisser = new Nisser()
+        this.ferjesundet = new Ferjesundet()
+        this.skeimo = new Skeimo()
         this.kirkaArray()
         this.nisserArray()
+        this.ferjesundetArray()
         this.exitInfo()
 
     }  
@@ -48,6 +53,15 @@ export default class Locations
         for(const nisserPoint of this.nisser.nisserPoints)
         {
             this.nisserArray.push(nisserPoint)
+        }
+    }
+
+    ferjesundetArray()
+    {
+        this.ferjesundetArray = []
+        for(const ferjesundetPoint of this.ferjesundet.ferjesundetPoints)
+        {
+            this.ferjesundetArray.push(ferjesundetPoint)
         }
     }
 }

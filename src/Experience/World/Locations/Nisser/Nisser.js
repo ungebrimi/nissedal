@@ -17,7 +17,6 @@ export default class Nisser
         this.torgrimsfjell = new Torgrimsfjell()
         this.lauvdalsfjell = new LauvdalsFjell()
         this.setNisserPoints()
-        this.exitInfo()
     }
 
     setNisserPoints()
@@ -25,8 +24,10 @@ export default class Nisser
         // DOM
         const kirkaBtn = document.querySelector('#kirka')
         const nisserBtn = document.querySelector('#nisser')
+        const ferjesundetBtn = document.querySelector('#ferjesundet')
+        const skeimoBtn = document.querySelector('#skeimo')
+
         const nisserLocations = document.querySelector('.locations__nisser')
-        const kirkaLocations = document.querySelector('.locations__kirka')
         // points arrays
         this.nisserPoints = 
         [
@@ -44,38 +45,38 @@ export default class Nisser
         // event listeners
         nisserBtn.addEventListener('click', () => 
         {
-            for(const points of this.nisserPoints)
+            for(const nisserPoint of this.nisserPoints)
             {
-                kirkaLocations.classList.add("hidden")
-                this.scene.add(points)
+                this.scene.add(nisserPoint)
+                nisserLocations.classList.remove("hidden")
             }
         })
 
         kirkaBtn.addEventListener('click', () => 
         {
-            for(const points of this.nisserPoints)
+            for(const nisserPoint of this.nisserPoints)
             {
-                nisserLocations.classList.add("hidden")
-                this.scene.remove(points)
+                this.scene.remove(nisserPoint)
+                nisserLocations.classList.add("hidden")                   
             }
         })
-    }
-    
-    exitInfo()
-    {
 
-        const exitBtn = document.querySelectorAll('#info-exit')
-        const informationBoxes = document.querySelectorAll('.information-box')
-        
-        for(const btn of exitBtn)
+        ferjesundetBtn.addEventListener('click', () =>
         {
-            btn.addEventListener('click', () =>  
+            for(const nisserPoint of this.nisserPoints)
             {
-                for(const informationBox of informationBoxes)
-                {
-                    informationBox.classList.add("hidden")
-                }
-            })
-        }
+                this.scene.remove(nisserPoint)
+                nisserLocations.classList.add("hidden")
+            }
+        })
+
+        skeimoBtn.addEventListener('click', () =>
+        {
+            for(const nisserPoint of this.nisserPoints)
+            {
+                this.scene.remove(nisserPoint)
+                nisserLocations.classList.add("hidden")
+            }
+        })
     }
 }

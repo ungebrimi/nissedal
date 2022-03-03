@@ -5,8 +5,6 @@ import Time from '../Utils/Time';
 
 // locations
 const nissedal = document.querySelector("#nisser")
-const stranda = document.querySelector("#stranda")
-const framnes = document.querySelector("#framnes")
 const skeimo = document.querySelector("#skeimo")
 const kirka = document.querySelector("#kirka")
 const ferjesundet = document.querySelector("#ferjesundet")
@@ -28,8 +26,6 @@ export default class imageSphere {
             nissedalTexture: textureLoader.load('textures/nissedalFlipped.jpg'),
             ferjesundetTexture: textureLoader.load('textures/ferjesundetFlipped.jpg'),
             kirkaTexture: textureLoader.load('textures/kirkaFlipped.jpg'),
-            strandaTexture: textureLoader.load('textures/strandaFlipped.jpg'),
-            framnesTexture: textureLoader.load('textures/framnesFlipped.jpg'),
             skeimoTexture: textureLoader.load('textures/skeimoFlipped.jpg')
         }
         // Image sphere
@@ -54,16 +50,6 @@ export default class imageSphere {
         nissedal.addEventListener("click", () =>
         {
             imageSphere.material.map = textures.nissedalTexture
-        })
-
-        stranda.addEventListener("click", () =>
-        {
-            imageSphere.material.map = textures.strandaTexture
-        })
-
-        framnes.addEventListener("click", () =>
-        {
-            imageSphere.material.map = textures.framnesTexture
         })
 
         skeimo.addEventListener("click", () =>

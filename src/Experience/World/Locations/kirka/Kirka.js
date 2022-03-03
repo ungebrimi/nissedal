@@ -17,10 +17,14 @@ export default class Kirka
 
     setKirkaPoints()
     {
-        const nisserLocations = document.querySelector('.locations__nisser')
-        const kirkaLocations = document.querySelector('.locations__kirka')
+        // DOM
         const kirkaBtn = document.querySelector('#kirka')
         const nisserBtn = document.querySelector('#nisser')
+        const ferjesundetBtn = document.querySelector('#ferjesundet')
+        const skeimoBtn = document.querySelector('#skeimo')
+
+        const kirkaLocations = document.querySelector('.locations__kirka')
+
 
         this.kirkePoints = 
         [
@@ -34,17 +38,35 @@ export default class Kirka
             for(const kirkePoint of this.kirkePoints)
             {
                 this.scene.add(kirkePoint)
-                nisserLocations.classList.add("hidden")
-                kirkaLocations.classList.remove("hidden")         
+                kirkaLocations.classList.remove("hidden")          
             }
         })
 
         nisserBtn.addEventListener('click', () => 
         {
-            for(const points of this.kirkePoints)
+            for(const kirkepoint of this.kirkePoints)
             {
-              this.scene.remove(points)
-              nisserLocations.classList.remove("hidden")
+              this.scene.remove(kirkepoint)
+              kirkaLocations.classList.add("hidden")              
+            }
+        })
+
+        ferjesundetBtn.addEventListener('click', () =>
+        {
+            for(const kirkepoint of this.kirkePoints)
+            {
+                this.scene.remove(kirkepoint)
+                kirkaLocations.classList.add("hidden")
+            }
+        })
+
+
+        skeimoBtn.addEventListener('click', () =>
+        {
+            for(const kirkepoint of this.kirkePoints)
+            {
+                this.scene.remove(kirkepoint)
+                kirkaLocations.classList.add("hidden")
             }
         })
     }

@@ -15,14 +15,25 @@ export default class Raycaster
         this.scene = this.experience.scene
         this.camera = this.experience.camera
         this.locations = new Locations()
+        // nisser
         this.aktivitetsplass = this.locations.nisser.aktivitetsplass
         this.brygga = this.locations.nisser.brygga
         this.kyrkjeneset = this.locations.nisser.kyrjeneset
         this.torgrimsfjell = this.locations.nisser.torgrimsfjell
         this.lauvdalsfjell = this.locations.nisser.lauvdalsfjell
+        // kirka
         this.arnfinnBrygga = this.locations.kirka.arnfinnBrygga
         this.gjestiveri = this.locations.kirka.gjestiveri
         this.kirke = this.locations.kirka.kirke
+        // ferjesundet
+        this.ferja = this.locations.ferjesundet.ferja
+        this.ferjesundetCafe = this.locations.ferjesundet.ferjesundetCafe
+        this.vikingGrav = this.locations.ferjesundet.vikingGrav
+        this.vikodden = this.locations.ferjesundet.vikodden
+        this.vikCamping = this.locations.ferjesundet.vikCamping
+        // skeimo
+        this.hegefjell = this.locations.skeimo.hegefjell
+        this.rindefjell = this.locations.skeimo.rindefjell
         
         // HTML INFORMATION BOXES
         // nisser
@@ -35,6 +46,15 @@ export default class Raycaster
         const kirke = document.querySelector('.locations__kirka-kirke')
         const arnfinnBrygga = document.querySelector('.locations__kirka-arnfinnbrygga')
         const gjestiveriet = document.querySelector('.locations__kirka-gjestiveriet')
+        // ferjesundet
+        const ferja = document.querySelector('.locations__ferjesundet-ferja')
+        const ferjesundetCafe = document.querySelector('.locations__ferjesundet-ferjesundetcafe')
+        const vikingGrav = document.querySelector('.locations__ferjesundet-vikinggrav')
+        const vikodden = document.querySelector('.locations__ferjesundet-vikodden')
+        const vikCamping = document.querySelector('.locations__ferjesundet-vikcamping')
+        // skeimo
+        const hegefjell = document.querySelector('.locations__skeimo-hegefjell')
+        const rindefjell = document.querySelector('.locations__skeimo-rindefjell')
 
         // Time tick event
         this.time.on('tick', () =>
@@ -103,6 +123,7 @@ export default class Raycaster
                     kyrkjeneset.classList.add("hidden")
                     break
                 
+                    // kirka
                 case this.arnfinnBrygga.arnfinnBryggaPoint:
                     arnfinnBrygga.classList.remove("hidden")
                     kirke.classList.add("hidden")
@@ -119,6 +140,57 @@ export default class Raycaster
                     gjestiveriet.classList.remove("hidden")
                     kirke.classList.add("hidden")
                     arnfinnBrygga.classList.add("hidden")
+
+                    // Ferjesundet
+                case this.ferja.ferjaPoint:
+                    ferja.classList.remove("hidden")
+                    ferjesundetCafe.classList.add("hidden")
+                    vikingGrav.classList.add("hidden")
+                    vikodden.classList.add("hidden")
+                    vikCamping.classList.add("hidden")
+                    break
+                
+                case this.ferjesundetCafe.ferjesundetCafePoint:
+                    ferjesundetCafe.classList.remove("hidden")
+                    ferja.classList.add("hidden")
+                    vikingGrav.classList.add("hidden")
+                    vikodden.classList.add("hidden")
+                    vikCamping.classList.add("hidden")
+                    break
+
+                case this.vikingGrav.vikingGravPoint:
+                    vikingGrav.classList.remove("hidden")
+                    ferjesundetCafe.classList.add("hidden")
+                    ferja.classList.add("hidden")
+                    vikodden.classList.add("hidden")
+                    vikCamping.classList.add("hidden")
+                    break
+
+                case this.vikodden.vikoddenPoint:
+                    vikodden.classList.remove("hidden")
+                    vikingGrav.classList.add("hidden")
+                    ferjesundetCafe.classList.add("hidden")
+                    ferja.classList.add("hidden")
+                    vikCamping.classList.add("hidden")
+                    break
+
+                case this.vikCamping.vikCampingPoint:
+                    vikCamping.classList.remove("hidden")
+                    vikodden.classList.add("hidden")
+                    vikingGrav.classList.add("hidden")
+                    ferjesundetCafe.classList.add("hidden")
+                    ferja.classList.add("hidden")
+                    break
+
+                    //skeimo
+                case this.hegefjell.hegefjellPoint:
+                    hegefjell.classList.remove("hidden")
+                    rindefjell.classList.add("hidden")
+                    break
+
+                case this.rindefjell.rindefjellPoint:
+                    rindefjell.classList.remove("hidden")
+                    hegefjell.classList.add("hidden")
                 }
             }
         })
@@ -128,14 +200,25 @@ export default class Raycaster
     {
         this.objectsToIntersect = 
         [
+            //nisser
             this.aktivitetsplass.aktivitetsPoint,
             this.brygga.bryggaPoint, 
             this.kyrkjeneset.kyrkjenesetPoint, 
             this.torgrimsfjell.torgrimsfjellPoint,
             this.lauvdalsfjell.lauvdalsFjellPoint,
+            //kirka
             this.arnfinnBrygga.arnfinnBryggaPoint,
             this.kirke.kirkePoint,
-            this.gjestiveri.gjestiveriPoint
+            this.gjestiveri.gjestiveriPoint,
+            // ferjesundet
+            this.ferja.ferjaPoint,
+            this.ferjesundetCafe.ferjesundetCafePoint,
+            this.vikingGrav.vikingGravPoint,
+            this.vikodden.vikoddenPoint,
+            this.vikCamping.vikCampingPoint,
+            // skeimo
+            this.rindefjell.rindefjellPoint,
+            this.hegefjell.hegefjellPoint,
         ]
         
         this.raycaster.setFromCamera(this.mouse, this.camera.instance)
