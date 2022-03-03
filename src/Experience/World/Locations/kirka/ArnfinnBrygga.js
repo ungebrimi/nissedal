@@ -2,19 +2,19 @@ import * as THREE from 'three'
 import Debug from '../../../Utils/Debug.js'
 import Experience from '../../../Experience.js'
 
-export default class Kyrjeneset
+export default class ArnfinnBrygga
 {
     constructor()
     {
-        this.debug = new Debug()
         this.experience = new Experience()
         this.scene = this.experience.scene
-        this.setKyrjenesetPoint()
+        this.debug = new Debug()
+        this.setArnfinnBryggaPoint()
     }
 
-    setKyrjenesetPoint()
+    setArnfinnBryggaPoint()
     {
-        this.kyrkjenesetPoint = new THREE.Mesh(
+        this.arnfinnBryggaPoint = new THREE.Mesh(
             new THREE.CircleGeometry(0.02, 17),
             new THREE.MeshBasicMaterial(
                 {
@@ -22,8 +22,8 @@ export default class Kyrjeneset
                 }
             )
             )
-        this.kyrkjenesetPoint.position.set(0.3, -0.57, -2.9)
-        this.kyrkjenesetPoint.rotation.set(0, 0.17, 0)
-        
-    }
+            this.arnfinnBryggaPoint.position.set(2.056, -1.311, 1.637)
+            this.arnfinnBryggaPoint.rotation.set(-2.621, -0.989, 0.37)
+        }
+
 }

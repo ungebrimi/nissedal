@@ -22,18 +22,7 @@ export default class Brygga
                 }
             )
             )
-            this.bryggaPoint.position.set(-1.76, -1.32, -2.01)
+            this.bryggaPoint.position.set(-1.4, -1.32, -2.24)
             this.bryggaPoint.rotation.set(5.82, 0.41, 0)
-        
-            this.testBox = new THREE.Mesh(
-            new THREE.BoxGeometry(1, 1, 1),
-            new THREE.MeshBasicMaterial(
-                {
-                    color: "#fffeff"
-                }
-            )
-            )
-            this.testBox.position.set(1, 1, 1)
-            this.scene.add(this.testBox)
     }
 }

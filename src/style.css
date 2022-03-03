@@ -19,6 +19,8 @@ body
     top: 0;
     left: 0;
     outline: none;
+    margin: 0;
+    padding: 0;
 }
 
 /*
@@ -177,5 +179,14 @@ body
     padding: 1.4rem;
     color: var(--clr-white);
     background-color: var(--clr-dark);
-    max-width: 60ch;
+    max-width: 40ch;
+    border-top-right-radius: 5px;
+}
+
+#info-exit
+{
+    position: absolute;
+    right: 5%;
+    z-index: 100;
+    font-size: 1.2rem;
 }

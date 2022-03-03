@@ -8,6 +8,8 @@ import '../../index.html'
 const openMenu = document.querySelector(".places__btn")
 const closeMenu = document.querySelector("#exit")
 const menu = document.querySelector(".places")
+const infoExit = document.querySelector('#info-exit')
+const locations = document.querySelectorAll('.information-box')
 // textures
 
 export default class Menu

@@ -22,7 +22,7 @@ export default class LauvdalsFjell
                 }
             )
             )
-            this.lauvdalsFjellPoint.position.set(-2.9, 0.6, 0.39)
+            this.lauvdalsFjellPoint.position.set(-2.898, 0.612, 0.04)
             this.lauvdalsFjellPoint.rotation.set(0, 1.4, 0.37)
-        }
+    }
 }

@@ -44,8 +44,11 @@ export default class imageSphere {
             )
         )
         imageSphere.position.set(0, 0, 0)
-        imageSphere.rotation.set(0, 2.5, 0)
+        imageSphere.rotation.set(0, 2.356, 0)
         this.scene.add(imageSphere)
+
+       // const axesHelper = new THREE.AxesHelper( 2 )
+       // this.scene.add(axesHelper)
 
         // change the texture for wich location that is pressed
         nissedal.addEventListener("click", () =>
